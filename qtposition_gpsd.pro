@@ -19,6 +19,6 @@ SOURCES += \
 OTHER_FILES += plugin.json
 
 unix {
-    target.path = $QTDIR/plugins/position
+    target.path = $$[QT_INSTALL_PLUGINS]/position
     INSTALLS += target
 }
