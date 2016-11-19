@@ -17,3 +17,8 @@ SOURCES += \
     qgeosatelliteinfosource_gpsd.cpp
 
 OTHER_FILES += plugin.json
+
+unix {
+    target.path = $QTDIR/plugins/position
+    INSTALLS += target
+}
