@@ -91,7 +91,7 @@ bool GpsdMasterDevice::gpsdConnect()
 {
   if( _socket->isOpen())
   {
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
     qDebug() << "Already connected to gpsd";
 #endif
     return true;
@@ -103,7 +103,7 @@ bool GpsdMasterDevice::gpsdConnect()
     return false;
   }
   
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
   qDebug() << "Connected to gpsd";
 #endif
   return true;
@@ -113,7 +113,7 @@ void GpsdMasterDevice::gpsdDisconnect()
 {
   if( !_socket->isOpen())
       return;
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
   qDebug() << "Disconnecting from gpsd";
 #endif
   _socket->close();
@@ -126,7 +126,7 @@ bool GpsdMasterDevice::gpsdStart()
   
   if(!_gpsdStarted)
   {
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
     qDebug() << "Starting gpsd";
 #endif
     _socket->write("?WATCH={\"enable\":true, \"nmea\":true}\n");
@@ -142,7 +142,7 @@ bool GpsdMasterDevice::gpsdStop()
   
   if(_gpsdStarted)
   {
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
     qDebug() << "Stopping gpsd";
 #endif
     _socket->write("?WATCH={\"enable\": false}\n");
@@ -158,7 +158,7 @@ QIODevice* GpsdMasterDevice::createSlave()
   QBuffer* slave = new QBuffer(this);
   slave->open(QIODevice::ReadWrite);
   _slaves.append(qMakePair(slave,false));
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
   qDebug() << "Created slave" << slave;
 #endif
   return slave;
@@ -172,7 +172,7 @@ void GpsdMasterDevice::destroySlave(QIODevice* slave)
     if(it->first == slave)
     {
       _slaves.erase(it);
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
       qDebug() << "Destroyed slave" << slave;
 #endif
       delete slave;
@@ -194,7 +194,7 @@ void GpsdMasterDevice::pauseSlave(QIODevice* slave)
   {
     if(it->first == slave)
     {
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
       qDebug() << "Pausing slave" << slave;
 #endif
       it->second = false;
@@ -213,7 +213,7 @@ void GpsdMasterDevice::unpauseSlave(QIODevice* slave)
   {
     if(it->first == slave)
     {
-#ifndef QT_NO_DEBUG
+#ifndef QT_NO_DEBUG12345
       qDebug() << "Unpausing slave" << slave;
 #endif
       it->second = true;
