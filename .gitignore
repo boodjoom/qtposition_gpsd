@@ -5,3 +5,5 @@ Makefile
 *~
 \#*
 .#*
+qtposition_gpsd.pro.user
+build-Qt_5_5_1_MinGW_32bit
